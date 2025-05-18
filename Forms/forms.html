@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Forms/style.css">
+    <link rel="icon" type="image" href="../imgs/FavIcon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>ReSolar - Registro</title>
+</head>
+<body>
+    <button id="voltar" onclick="voltar()"><i class="fa-solid fa-angle-left"></i></button>
+
+    <div id="body">
+        <img src="../imgs/Forms/Etapa_1.svg" alt="" id="imgEtapa">
+
+        <form id="formPessoal" style="display: flex;" onsubmit="submitForm()">
+            <p class="formTitle">Nome completo*</p>
+            <div class="inputIconContainer">
+                <i class="fa-solid fa-user inputIcons"></i>
+                <input id="nomeCompleto" name="nomeCompleto" type="text" class="input" placeholder="José Silva dos Santos" required>
+            </div>
+            
+            <p class="formTitle">Endereço de e-mail*</p>
+            <div class="inputIconContainer">
+                <i class="fa-regular fa-envelope inputIcons"></i>  
+                <input id="email" name="email" type="email" class="input" placeholder="alguem.exemplo@seuemail.com.br" required>
+            </div>
+
+            <p class="formTitle">Endereço residencial*</p>
+            <div class="inputIconContainer">
+                <i class="fa-solid fa-location-dot inputIcons"></i>
+                <input id="endereço" name="endereço" type="text" class="input" placeholder="Av. Orosimbo Maia, 2600 - Cambuí" required>
+            </div>
+
+            <p class="formTitle">Senha*</p>
+            <div class="inputIconContainer">
+                <i class="fa-solid fa-lock inputIcons"></i>
+                <input id="senha" name="senha" type="password" class="input" placeholder="24lR2@GR:7Q'" required>
+            </div>
+
+            <p class="formTitle">Número de telefone</p>
+            <div class="inputIconContainer">
+                <i class="fa-solid fa-phone inputIcons"></i>
+                <input id="telefone" name="telefone" type="text" class="input" placeholder="(99) 99999-9999">
+            </div>
+
+            <p class="formTitle">Você é</p>
+            <div class="inputIconContainer">
+                <i class="fa-solid fa-money-check-dollar inputIcons"></i>
+                <select id="tipoPessoa" style="height: 33px;" name="tipoPessoa" class="input">
+                    <option value="------" selected>Nenhuma opção</option>
+                    <option value="Pessoa Física" class="options">CPF - Pessoa Física</option>
+                    <option value="Pessoa Jurídica" class="options">CNPJ - Pessoa Jurídica</option>
+                </select>
+            </div>
+        </form>
+
+        <form id="formPainel" style="display: none;">
+            <p class="formTitle">Marca*</p>
+            <div class="inputIconContainer">
+                <i class="fa-solid fa-store inputIcons"></i>
+                <input id="marca" name="marca" type="text" class="input" placeholder="Jinko, BYD, Canadian Solar..." required>
+            </div>
+
+            <p class="formTitle">Modelo*</p>
+            <div class="inputIconContainer">
+                <i class="fa-solid fa-tag inputIcons"></i>
+                <input id="modelo" name="modelo" type="text" class="input" placeholder="TigerNeo, MLK-36, CS6W-550MS..." required>
+            </div>
+            
+            <p class="formTitle">Potência (em Watts)</p>
+            <div class="inputIconContainer">
+                <i class="fa-solid fa-bolt inputIcons"></i>
+                <input id="potência" name="potência" type="text" class="input" placeholder="300W" required>
+            </div>
+
+            <p class="formTitle">Ano de fabricação*</p>
+            <div class="inputIconContainer">
+                <i class="fa-solid fa-gear inputIcons"></i>  
+                <input id="dataFabri" name="dataFabri" type="date" class="input" required>
+            </div>
+
+            <p class="formTitle">Ano de instalação*</p>
+            <div class="inputIconContainer">
+                <i class="fa-solid fa-toolbox inputIcons"></i>
+                <input id="dataInst" name="dataInst" type="date" class="input" placeholder="440W" min="0" required>
+            </div>
+
+            <p class="formTitle">Qual é o tipo do inversor solar?*</p>
+            <div class="inputIconContainer">
+                <i class="fa-solid fa-power-off inputIcons"></i>
+                <select id="inversor" style="height: 33px;" name="tipoInversor" class="input" required>
+                    <option value="" disabled selected></option>
+                    <option value="On-Grid" class="options">On-Grid</option>
+                    <option value="Off-Grid" class="options">Off-Grid</option>
+                    <option value="String" class="options">String</option>
+                    <option value="Híbrido" class="options">Híbrido</option>
+                    <option value="Microinversor" class="options">Microinversor</option>
+                    <option value="Central" class="options">Central</option>
+                </select>
+            </div>
+        </form>
+        
+        <form id="formPainel2" style="display: none;">
+            <p class="formTitle">Qual é o tipo do painel?*</p>
+            <div class="inputIconContainer">
+                <i class="fa-solid fa-solar-panel inputIcons"></i>
+                <select id="tipo" style="height: 33px;" name="tipoPainel" class="input" required>
+                    <option value="" disabled selected></option>
+                    <option value="Monocristalino" class="options">Monocristalino</option>
+                    <option value="Policristalino" class="options">Policristalino</option>
+                    <option value="Híbrido" class="options">Híbrido</option>
+                    <option value="Filme fino" class="options">Filme fino (a-Si, CdTe, CIGS)</option>
+                </select>
+            </div>
+
+            <p class="formTitle">Este painel ainda funciona?*</p>
+            <div class="inputIconContainer">
+                <i class="fa-solid fa-sun inputIcons"></i>
+                <select id="funcionamento" style="height: 33px;" name="funcionamento" class="input" required>
+                    <option value="" disabled selected></option>
+                    <option value="Sim" class="options">Sim</option>
+                    <option value="Parcialmente" class="options">Parcialmente</option>
+                    <option value="Não" class="options">Não</option>
+                </select>
+            </div>
+            
+            <p class="formTitle">Qual é o estado deste painel?*</p>
+            <div class="inputIconContainer">
+                <i class="fa-solid fa-certificate inputIcons"></i>
+                <select id="estado" style="height: 33px;" name="estado" class="input" required>
+                    <option value="" disabled selected></option>
+                    <option value="Inteiro" class="options">Inteiro</option>
+                    <option value="Trincado" class="options">Trincado</option>
+                    <option value="Quebrado" class="options">Quebrado</option>
+                </select>
+            </div>
+
+            <p class="formTitle">Motivo para descarte*</p>
+            <div class="inputIconContainer">
+                <i class="fa-solid fa-pencil inputIcons"></i>
+                <select id="motivo" style="height: 33px;" name="motivo" class="input" required>
+                    <option value="" disabled selected></option>
+                    <option value="Quebra" class="options">Quebra</option>
+                    <option value="Fim da vida útil" class="options">Fim da vida útil (25 ~ 30 anos)</option>
+                    <option value="Troca" class="options">Troca</option>
+                    <option value="Desinstalação" class="options">Desinstalação</option>
+                </select>
+            </div>
+
+            <p class="formTitle">Quantidade de painéis*</p>
+            <div class="inputIconContainer">
+                <i class="fa-solid fa-hashtag inputIcons"></i>
+                <input id="quantidade" name="quantidade" type="number" class="input" placeholder="1, 4, 6..." min="1" required>
+            </div>
+            
+            <p class="formTitle">Imagens</p>
+            <div class="inputIconContainer">
+                <i class="fa-solid fa-images inputIcons"></i>
+                <input id="imagens" name="imagens" type="file" class="input" min="1" accept="image/*">
+            </div>
+        </form>
+
+        <form id="formData" style="display: none;">
+
+            <p class="formTitle">Data para coleta*</p>
+            <div class="inputIconContainer">
+                <i class="fa-solid fa-calendar-days inputIcons"></i>  
+                <input id="inputDateColeta" name="dataColeta" type="date" class="input" required min="" max="" onchange="atualizarResumo()" required>
+            </div>
+
+            <p class="formTitle">Hora para coleta*</p>
+            <div class="inputIconContainer">
+                <i class="fa-solid fa-clock inputIcons"></i>  
+                <input id="inputTimeColeta" name="horaColeta" type="time" class="input" required min="08:00" max="17:00" onchange="atualizarResumo()" required>
+            </div>
+
+            <p class="formTitle">Endereço para coleta*</p>
+            <div class="inputIconContainer" style="margin-bottom: 0px;">
+                <i class="fa-solid fa-truck inputIcons"></i>  
+                <input style="padding: 0px 12% 0px;" id="endereçoColeta" name="endereçoColeta" type="text" class="input" placeholder="Rua dos Andradas, 140 –  Santa Ifigênia" onchange="atualizarResumo()" required>
+            </div>
+            <div class="inputIconContainer" style="margin-top: 5px;">
+                <input style="width: 10%" id="mesmoEndereço" name="mesmoEndereço" type="checkbox" class="input" onchange="pegarEndereço()">
+                <label for="endereçoColeta" id="mesmoEndereçoLabel">Usar mesmo endereço residencial?</label>
+            </div>
+
+            <h4 id="resumoAgendamento"></h4>
+
+        </form>
+
+        <div id="resumoFinal" style="display: none;">
+            <table id="resumoTable" style="width: 100%;">
+                <tr>
+                    <th>Nome</th>
+                    <td id="tableNome"></td>
+                </tr>
+                <tr>
+                    <th>E-mail</th>
+                    <td id="tableEmail"></td>
+                </tr>
+                <tr>
+                    <th>Endereço</th>
+                    <td id="tableEndereco"></td>
+                </tr>
+                <tr>
+                    <th>Telefone</th>
+                    <td id="tableTelefone"></td>
+                </tr>
+                <tr>
+                    <th>Tipo de pessoa</th>
+                    <td id="tableTipoPessoa"></td>
+                </tr>
+                <tr>
+                    <th>Marca</th>
+                    <td id="tableMarca"></td>
+                </tr>
+                <tr>
+                    <th>Modelo</th>
+                    <td id="tableModelo"></td>
+                </tr>
+
+                <tr>
+                    <th>Potência</th>
+                    <td id="tablePotencia"></td>
+                </tr>
+
+                <tr>
+                    <th>Ano de fabricação</th>
+                    <td id="tableDataFabricacao"></td>
+                </tr>
+
+                <tr>
+                    <th>Ano de instalação</th>
+                    <td id="tableDataInstalacao"></td>
+                </tr>
+
+                <tr>
+                    <th>Tipo de inversor</th>
+                    <td id="tableTipoInversor"></td>
+                </tr>
+
+                <tr>
+                    <th>Tipo de painel</th>
+                    <td id="tableTipoPainel"></td>
+                </tr>
+
+                <tr>
+                    <th>Estado de funcionalidade</th>
+                    <td id="tableEstadoFuncionalidade"></td>
+                </tr>
+
+                <tr>
+                    <th>Estado físico</th>
+                    <td id="tableEstadoFisico"></td>
+                </tr>
+
+                <tr>
+                    <th>Motivo para descarte</th>
+                    <td id="tableMotivoDescarte"></td>
+                </tr>
+
+                <tr>
+                    <th>Quantidade de painéis</th>
+                    <td id="tableQuantidadePaineis"></td>
+                </tr>
+
+                <tr>
+                    <th>Data de coleta</th>
+                    <td id="tableDataColeta"></td>
+                </tr>
+
+                <tr>
+                    <th>Horário para coleta</th>
+                    <td id="tableHorarioColeta"></td>
+                </tr>
+
+                <tr>
+                    <th>Endereço para coleta</th>
+                    <td id="tableEnderecoColeta"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="completo" style="display: none">
+            <img src="../imgs/Forms/FormsCompleted.svg" alt="Forms Completo" id="imgCompleto">   
+            <h2 id="completoTitle">Registro completo!</h2>
+            <h5 id="códigoPedido"></h5>
+        </div>
+    </div>
+
+    
+    <button id="avançar" type="button" onclick="avancar()"><i class="fa-solid fa-angle-right"></i></button>
+
+    <script src="../Forms/script.js"></script>
+</body>
+</html>
