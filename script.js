@@ -103,37 +103,37 @@ comoFuncionaTextos[5] = "Depois de concluídas as etapas de coleta, avaliação 
 
 function op1() {
     comoText.innerHTML = comoFuncionaTextos[0];
-    comoImg.src = "../imgs/Etapas/etapa1.svg";
+    comoImg.src = "imgs/Etapas/etapa1.svg";
     comoImg.style.width = "80%";
 }
 
 function op2() {
     comoText.innerHTML = comoFuncionaTextos[1];
-    comoImg.src = "../imgs/Etapas/etapa2.svg";
+    comoImg.src = "imgs/Etapas/etapa2.svg";
     comoImg.style.width = "90%";
 }
 
 function op3() {
-    comoImg.src = "../imgs/Etapas/etapa3.svg";
+    comoImg.src = "imgs/Etapas/etapa3.svg";
     comoText.innerHTML = comoFuncionaTextos[2];
     comoImg.style.width = "80%";
 }
 
 function op4() {
     comoText.innerHTML = comoFuncionaTextos[3];
-    comoImg.src = "../imgs/Etapas/etapa4.svg";
+    comoImg.src = "imgs/Etapas/etapa4.svg";
     comoImg.style.width = "95%";
 }
 
 function op5() {
     comoText.innerHTML = comoFuncionaTextos[4];
-    comoImg.src = "../imgs/Etapas/etapa5.svg";
+    comoImg.src = "imgs/Etapas/etapa5.svg";
     comoImg.style.width = "80%";
 }
 
 function op6() {
     comoText.innerHTML = comoFuncionaTextos[5];
-    comoImg.src = "../imgs/Etapas/etapa6.svg";
+    comoImg.src = "imgs/Etapas/etapa6.svg";
     comoImg.style.width = "75%";
 }
 
@@ -191,7 +191,7 @@ function topFunction() {
   document.documentElement.scrollTop = 0; 
 } 
 
-const url = "../Forms/forms.html";
+const url = "Forms/forms.html";
 
 function abrirReciclar(url) {
     const win = window.open(url, "_self", );
