@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image" href="../imgs/FavIcon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>ReSolar - reciclagem de painéis solares</title>
+</head>
+<body>
+
+    <button onclick="topFunction()" id="backTop" title="Go to top"><i class="fa-solid fa-angle-up"></i></button> 
+
+    <header>
+        <table id="navTable">
+            <th id="leftSpace"></th>            
+            <th id="navImg">
+                <img src="../imgs/logo_resolar.png" alt="LogoResolar">
+            </th>
+
+            <th id="navTitle">
+                <p>ReSolar</p>
+            </th>
+
+            <th id="navOptions">
+                <a class="navA" href="#sobreNos">Sobre nós</a>
+                <a class="navA" href="#comoFunciona">Como funciona?</a>
+                <a class="navA" href="#perguntasFrequentes">Dúvidas frequentes</a>
+                <a class="navA" href="#reciclar">Reciclar</a>
+                <a class="navA" href="mailto:lucas.s.siqueira.2009@gmail.com" target="_blank">Contatar</a>
+                <a id="creditos" class="navA"><i class="fa-solid fa-coins"></i>123 créditos </a>
+            </th>
+            <th id="navLogin">                
+                <i id="login" class="fa-solid fa-user"></i>
+                <a id="loginTexto">Login</a>
+            </th>
+
+            <th id="rightSpace"></th>
+        </table>
+    </header>
+
+
+    <div id="bodyBg">
+        <img id="fundo" src="../imgs/painelSolarFundo.jpg" alt="FundoPainelSolar">
+        <h1><span style="color:rgb(23, 245, 100);">Ganhe</span> bônus pelo descarte correto<span id="typeBar">|</span></h1>
+    </div>
+    
+
+    <div id="sobreNos">
+        <h1 id="bodyAbout">Sobre nós</h1>
+
+        <p class="aboutText">A ReSolar é um projeto focado em dar destino correto a painéis solares fora de uso. Atuamos na reciclagem e reaproveitamento de materiais, oferecendo uma solução simples para o descarte consciente desses equipamentos. Nosso objetivo é reduzir o impacto ambiental causado pelo descarte inadequado e facilitar o acesso à reciclagem para pessoas e empresas. Trabalhamos com transparência e eficiência para garantir que cada painel seja tratado com responsabilidade. Se você tem um painel antigo ou danificado, nós ajudamos a dar a ele o destino certo.</p>
+        
+        <p class="aboutText" id="moreText" style="display: none;">Ao notar o crescimento do uso de energia solar no Brasil e no mundo, percebemos também uma lacuna importante: o descarte adequado de painéis solares que chegam ao fim da vida útil ou são substituídos por modelos mais eficientes. Foi com isso em mente que surgiu a ReSolar — uma iniciativa que conecta usuários a um processo simples e seguro de reciclagem. Quando um painel é descartado por meio da nossa plataforma, ele passa por triagem, desmontagem e reaproveitamento de partes úteis. Materiais como vidro, alumínio, cobre e silício são direcionados para reciclagem industrial. Trabalhamos com responsabilidade ambiental, evitando o acúmulo de resíduos perigosos e promovendo a economia circular. Nosso sistema de creditação também permite que os participantes recebam pelo impacto positivo gerado por sua contribuição.</p>
+        
+        <p id="lerMais"><a href="" id="lerMaisBtn" onclick="lerMudar(event)">Ler mais</a></p>
+    </div>
+
+    <div id="comoFunciona">
+        <h1 id="bodyComo">Como funciona?</h1>
+        
+        <div id="coisas">
+            <h3 id="primeiroH3" onclick="comoFunciona(this), op1()">Registro de dados pessoais e técnicos</h3>
+            <h3 onclick="comoFunciona(this), op2()">Agendamento</h3>
+            <h3 onclick="comoFunciona(this), op3()">Análise dos equipamentos</h3>
+            <h3 onclick="comoFunciona(this), op4()">Desmontagem</h3>
+            <h3 onclick="comoFunciona(this), op5()">Venda dos desmontados</h3>
+            <h3 onclick="comoFunciona(this), op6()">Benefícios</h3>
+        </div>
+
+        <div id="comoContent" style="display: flex;">     
+           <table style="width: 100%;" id="comoTable">
+                <th style="width: 50%;">
+                    <p id="comoText"></p>
+                </th>
+
+                <th style="width: 50%;">
+                    <img src="" alt="ImagemComoFunciona" id="comoImg">
+                </th>
+            </table>
+        </div>
+    </div>
+
+    <div id="perguntasFrequentes">
+        <h1 id="bodyPerguntas">Dúvidas Frequentes</h1>
+        <div id="perguntas">
+            <h3 onclick="expand(this)" class="perguntas"><i class="fa-solid fa-magnifying-glass" style="margin: 0 10px 0;"></i>Quem pode participar do processo de reciclagem?<i class="setaExpandir fa-solid fa-angle-down"></i></h3>
+            <div class="ans respostaFechada">
+                <p>Qualquer pessoa ou empresa que possua painéis solares pode participar do nosso sistema de reciclagem, independentemente da quantidade ou do motivo para o descarte.</p>
+            </div>
+
+            <h3 onclick="expand(this)" class="perguntas"><i class="fa-solid fa-magnifying-glass" style="margin: 0 10px 0;"></i>Qual impacto esse projeto causa?<i class="setaExpandir fa-solid fa-angle-down"></i></h3>
+            <div class="ans respostaFechada">
+                <p>Nosso projeto ajuda a reduzir a poluição ambiental causada pelo descarte incorreto de painéis solares e metais pesados, além de incentivar a reutilização e reciclagem desses materiais, promovendo um consumo mais sustentável.</p>
+            </div>
+
+            <h3 onclick="expand(this)" class="perguntas"><i class="fa-solid fa-magnifying-glass" style="margin: 0 10px 0;"></i>Posso descartar painéis solares de qualquer fabricante?<i class="setaExpandir fa-solid fa-angle-down"></i></h3>
+            <div class="ans respostaFechada">
+                <p>Sim, nosso sistema aceita painéis solares de todas as marcas e modelos, desde que sejam diretamente para geração de energia.</p>
+            </div>
+
+            <h3 onclick="expand(this)" class="perguntas"><i class="fa-solid fa-magnifying-glass" style="margin: 0 10px 0;"></i>Tenho um painel muito antigo, ainda posso descartá-lo aqui?<i class="setaExpandir fa-solid fa-angle-down"></i></h3>
+            <div class="ans respostaFechada">
+                <p>Sim, painéis antigos também são aceitos e você receberá créditos proporcionais ao tempo de uso, incentivando o descarte no momento correto.</p>    
+            </div>
+
+            <h3 onclick="expand(this)" class="perguntas"><i class="fa-solid fa-magnifying-glass" style="margin: 0 10px 0;"></i>Como recebo os créditos após o descarte?<i class="setaExpandir fa-solid fa-angle-down"></i></h3>
+            <div class="ans respostaFechada">
+                <p>Após o fim do processo listado <a href="#comoFunciona">aqui</a>, os créditos são automaticamente adicionados à sua conta para serem usados em descontos em compras futuras.</p>
+            </div>
+
+            <h3 onclick="expand(this)" class="perguntas"><i class="fa-solid fa-magnifying-glass" style="margin: 0 10px 0;"></i>Há algum custo para o usuário participar do programa?<i class="setaExpandir fa-solid fa-angle-down"></i></h3>
+            <div class="ans respostaFechada">
+                <p>Não, o serviço é totalmente gratuito para os usuários, incluindo registro, coleta e reciclagem.</p>
+            </div>
+
+            <h3 onclick="expand(this)" class="perguntas"><i class="fa-solid fa-magnifying-glass" style="margin: 0 10px 0;"></i>O que acontece com os materiais reciclados?<i class="setaExpandir fa-solid fa-angle-down"></i></h3>
+            <div class="ans respostaFechada">
+                <p>Os materiais são separados e vendidos para empresas que reaproveitam vidro, silício, chumbo e outros componentes, contribuindo para a economia circular e redução de resíduos.</p>
+            </div>
+
+            <h3 onclick="expand(this)" class="perguntas"><i class="fa-solid fa-magnifying-glass" style="margin: 0 10px 0;"></i>Como a empresa se sustenta?<i class="setaExpandir fa-solid fa-angle-down"></i></h3>
+            <div class="ans respostaFechada">
+                <p>Uma porcentagem dos lucros recebidos nas vendas dos painéis solares reparados e das matérias primas recicladas é voltada para a empresa e uma outra porcentagem é voltada para a bonificação dos usuários.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="reciclar">
+        <h3 id="bodyReciclar">Pronto pra reciclar?</h3>
+        <p id="reciclarOrientações">Para começar o registro do seu painel solar, clique no botão abaixo</p>
+        
+        <h3 id="reciclarBotão" onclick="abrirReciclar(url)">Começar<i class="fa-solid fa-recycle"></i></h3>
+    </div>
+
+    <footer>
+        <table style="width: 100%;">
+            <th id="leftSpace"></th>            
+            <th id="footerImg">
+                <div id="resolarFooter">
+                    <p>Um projeto ReSolar</p>
+                    <img src="../imgs/logo_resolar.png" alt="ResolarLogoFooter">
+                </div>
+
+                <div id="bentãoFooter">
+                    <p>Apoio institucional</p>
+                    <img src="../imgs/BentãoLogo.png" alt="BentãoLogo">   
+                </div>
+
+            </th>
+
+            <th id="footerRights">
+                    <h3>Direitos reservados 2025 - ReSolar</h3>
+                    <a href="">Ver código-fonte</a>
+                    <h3>Equipe LGA - 1º ADS - AMS</h3>
+                    <h3>Lucas | Gabriel | Arantes</h3>
+            </th>
+
+            <th id="rightSpace"></th>
+        </table>
+    </footer>
+    <script src="/script.js"></script>
+</body>
+</html>
