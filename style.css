@@ -39,8 +39,7 @@ body {
 }
 
 #navImg img{
-    width: 110%;
-    height: 110%;
+    width: 80px;
 }
 
 #rightSpace, #leftSpace {
