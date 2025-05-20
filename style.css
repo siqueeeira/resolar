@@ -188,19 +188,19 @@ body {
 }
 
 #comoContent {
-    margin: 0 auto;
-    margin-top: 40px;
-    border-radius: 10px;
-    border: 2px black solid;
-
-    width: 80%;
-    height: 500px;
-
-    background-color: #FAF7F6;
-
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  width: 80%;
+  margin: 40px auto;
+  border-radius: 10px;
+  border: 2px black solid;
+  background-color: #FAF7F6;
+  flex-wrap: wrap;
 }
+
 
 #comoText {
     margin: 10px 40px 10px;
@@ -412,4 +412,12 @@ footer {
 .respostaFechada {
     height: 0px;
     visibility: hidden;
+}
+
+#comoImg {
+  width: 400px;
+  height: 400px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
 }
