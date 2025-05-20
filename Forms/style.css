@@ -21,17 +21,22 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* antes era center */
+    justify-content: flex-start;
+
     border: 2px black solid;
     border-radius: 10px;
     text-align: center;
     background-color: white;
+
     width: 90%;
-    max-width: 600px; /* limitar em telas grandes */
-    height: auto; /* deixar altura automática */
-    padding: 20px;
+    max-width: 600px;
+
+    height: 640px;           /* <-- ALTURA FIXA! */
     overflow-y: auto;
+    padding: 20px;
 }
+
+
 
 #imgEtapa {
     max-width: 400px;
@@ -112,10 +117,11 @@ body {
 
 .formTitle {
     margin: 5px 0px 5px;
+    padding: 0px 10px 0px;
     background-color: #0f70d4;
     border-radius: 10px;
     color: white;
-    width: 40%;
+    width: auto;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-size: 15px;
