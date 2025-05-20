@@ -21,28 +21,33 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* antes era center */
     border: 2px black solid;
     border-radius: 10px;
-
     text-align: center;
     background-color: white;
-    width: 40%;
-    height: 95vh;
+    width: 90%;
+    max-width: 600px; /* limitar em telas grandes */
+    height: auto; /* deixar altura automática */
+    padding: 20px;
+    overflow-y: auto;
 }
 
 #imgEtapa {
-    height: 15%;
-    width: 60%;
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
 }
 
 #formPessoal, #formPainel, #formPainel2, #formData, #resumoFinal, #completo {
-    height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 20px;
 }
+
 
 .input {
     text-align: center;
