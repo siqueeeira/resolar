@@ -22,9 +22,11 @@ function abrirHomepage() {
     win.focus()
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {   
+    // Aviso
+    window.alert("Nesta fase de teste, as perguntas não são obrigatórias, diferentemente de uma versão definitiva. \n\n Assim, é possível avançar sem preencher todos os campos.");
+    
     // Data máxima atual
-
     let inputDate = document.getElementById("inputDateColeta");
     let today = new Date();
     let minDate = today.toISOString().split('T')[0];
@@ -35,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function() {
     inputDate.setAttribute("max", maxDate);
 
     // Voltar o checkbox para o padrão
-
     inputMesmoEndereco.checked = false
 });
 
@@ -46,7 +47,6 @@ function submitForm(event) {
 }
 
 function avancar() {
-    let podeAvancar = true;
     switch (etapaI) {
         case 1:
             podeAvancar = formPessoal.checkValidity();
@@ -62,12 +62,6 @@ function avancar() {
             break;
         default:
             podeAvancar = true;
-    }
-
-    if (!podeAvancar) {
-        let formAtual = [formPessoal, formPainel, formPainel2, formData][etapaI-1];
-        if (formAtual) formAtual.reportValidity();
-        return;
     }
 
     if (inputEndereco.addEventListener('input', function() {
@@ -377,32 +371,27 @@ function resumoAtualizar() {
     let tableHorarioColeta = document.getElementById("tableHorarioColeta");
     let tableEnderecoColeta = document.getElementById("tableEnderecoColeta");
 
-    tableNome.innerHTML = document.getElementById("nomeCompleto").value;
-    tableEmail.innerHTML = document.getElementById("email").value;
-    tableEndereco.innerHTML = document.getElementById("endereço").value;
 
-    if (document.getElementById("telefone").value == "") {
-        tableTelefone.innerHTML = "------";
-    } else {
-        tableTelefone.innerHTML = document.getElementById("telefone").value;
+    document.getElementById("nomeCompleto").value == "" ? tableNome.innerHTML = "------" : tableNome.innerHTML = nome.value;
+    document.getElementById("email").value == "" ? tableEmail.innerHTML = "------" : tableEmail.innerHTML = email.value;
+    document.getElementById("endereço").value == "" ? tableEndereco.innerHTML = "------" : tableEndereco.innerHTML = endereco.value;
+    document.getElementById("telefone").value == "" ? tableTelefone.innerHTML = "------" : tableTelefone.innerHTML = telefone.value;
+    document.getElementById("tipoPessoa").value == "" ? tableTipoPessoa.innerHTML = "------" : tableTipoPessoa.innerHTML = document.getElementById("tipoPessoa").value;
+    document.getElementById("marca").value == "" ? tableMarca.innerHTML = "------" : tableMarca.innerHTML = document.getElementById("marca").value;
+    document.getElementById("modelo").value == "" ? tableModelo.innerHTML = "------" : tableModelo.innerHTML = document.getElementById("modelo").value;
+    document.getElementById("potência").value == "" ? tablePotencia.innerHTML = "------" : tablePotencia.innerHTML = document.getElementById("potência").value;
+    document.getElementById("dataFabri").value == "" ? tableDataFabricacao.innerHTML = "------" : tableDataFabricacao.innerHTML = document.getElementById("dataFabri").value.split("-").reverse().join("/");
+    document.getElementById("dataInst").value == "" ? tableDataInstalacao.innerHTML = "------" : tableDataInstalacao.innerHTML = document.getElementById("dataInst").value.split("-").reverse().join("/");
+    document.getElementById("inversor").value == "" ? tableTipoInversor.innerHTML = "------" : tableTipoInversor.innerHTML = document.getElementById("inversor").value;
+    document.getElementById("tipo").value == "" ? tableTipoPainel.innerHTML = "------" : tableTipoPainel.innerHTML = document.getElementById("tipo").value;
+    document.getElementById("funcionamento").value == "" ? tableEstadoFuncionalidade.innerHTML = "------" : tableEstadoFuncionalidade.innerHTML = document.getElementById("funcionamento").value;
+    document.getElementById("estado").value == "" ? tableEstadoFisico.innerHTML = "------" : tableEstadoFisico.innerHTML = document.getElementById("estado").value;
+    document.getElementById("motivo").value == "" ? tableMotivoDescarte.innerHTML = "------" : tableMotivoDescarte.innerHTML = document.getElementById("motivo").value;
+    document.getElementById("quantidade").value == "" ? tableQuantidadePaineis.innerHTML = "------" : tableQuantidadePaineis.innerHTML = document.getElementById("quantidade").value;
+    document.getElementById("inputDateColeta").value == "" ? tableDataColeta.innerHTML = "------" : tableDataColeta.innerHTML = document.getElementById("inputDateColeta").value.split("-").reverse().join("/");
+    document.getElementById("inputTimeColeta").value == "" ? tableHorarioColeta.innerHTML = "------" : tableHorarioColeta.innerHTML = document.getElementById("inputTimeColeta").value;
+    document.getElementById("endereçoColeta").value == "" ? tableEnderecoColeta.innerHTML = "------" : tableEnderecoColeta.innerHTML = document.getElementById("endereçoColeta").value;
     }
-
-    tableTipoPessoa.innerHTML = document.getElementById("tipoPessoa").value;
-    tableMarca.innerHTML = document.getElementById("marca").value;
-    tableModelo.innerHTML = document.getElementById("modelo").value;
-    tablePotencia.innerHTML = document.getElementById("potência").value;
-    tableDataFabricacao.innerHTML = document.getElementById("dataFabri").value.split("-").reverse().join("/");
-    tableDataInstalacao.innerHTML = document.getElementById("dataInst").value.split("-").reverse().join("/");
-    tableTipoInversor.innerHTML = document.getElementById("inversor").value;
-    tableTipoPainel.innerHTML = document.getElementById("tipo").value;
-    tableEstadoFuncionalidade.innerHTML = document.getElementById("funcionamento").value;
-    tableEstadoFisico.innerHTML = document.getElementById("estado").value;
-    tableMotivoDescarte.innerHTML = document.getElementById("motivo").value;
-    tableQuantidadePaineis.innerHTML = document.getElementById("quantidade").value;
-    tableDataColeta.innerHTML = document.getElementById("inputDateColeta").value.split("-").reverse().join("/");
-    tableHorarioColeta.innerHTML = document.getElementById("inputTimeColeta").value;
-    tableEnderecoColeta.innerHTML = document.getElementById("endereçoColeta").value;
-}
 
 let codigoPedidoText = document.getElementById("códigoPedido");
 
@@ -410,5 +399,6 @@ function codigoPedido() {
     let random = Math.random()
     let code = String(random).split(".")[1];
     
-    codigoPedidoText.innerHTML = "O código do seu pedido é <b>" + code + "</b> <br> e foi enviado para o e-mail <b>" + document.getElementById("email").value; + "</b>"
+    document.getElementById("email").value == "" ? codigoPedidoText.innerHTML = "O código do seu pedido é <b>" + code + "</b>" : codigoPedidoText.innerHTML = "O código do seu pedido é <b>" + code + "</b> <br> e foi enviado para o e-mail <b>" + document.getElementById("email").value; + "</b>"
+
 }
